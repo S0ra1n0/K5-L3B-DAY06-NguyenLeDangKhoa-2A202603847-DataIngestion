@@ -1,0 +1,229 @@
+{
+  "split": "dev",
+  "run_at": "2026-11-14T05:03:51+00:00",
+  "top_k": 3,
+  "model": "intfloat/multilingual-e5-base",
+  "questions": 15,
+  "strategies": {
+    "A": {
+      "dev": {
+        "hit@1": {
+          "n": 9,
+          "N": 15,
+          "rate": 0.6
+        },
+        "hit@3": {
+          "n": 14,
+          "N": 15,
+          "rate": 0.9333
+        },
+        "filter_compliance_top3": {
+          "n": 0,
+          "N": 5,
+          "rate": 0.0
+        },
+        "missed_hit@3": [
+          "q11"
+        ],
+        "evidence_split_suspected": [],
+        "mean_latency_ms": 25.6,
+        "by_type": {
+          "dien_dat_lai": {
+            "hit@1": {
+              "n": 3,
+              "N": 3,
+              "rate": 1.0
+            },
+            "hit@3": {
+              "n": 3,
+              "N": 3,
+              "rate": 1.0
+            }
+          },
+          "dieu_kien_ngoai_le": {
+            "hit@1": {
+              "n": 1,
+              "N": 5,
+              "rate": 0.2
+            },
+            "hit@3": {
+              "n": 4,
+              "N": 5,
+              "rate": 0.8
+            }
+          },
+          "metadata_filter": {
+            "hit@1": {
+              "n": 3,
+              "N": 4,
+              "rate": 0.75
+            },
+            "hit@3": {
+              "n": 4,
+              "N": 4,
+              "rate": 1.0
+            }
+          },
+          "truc_tiep": {
+            "hit@1": {
+              "n": 2,
+              "N": 3,
+              "rate": 0.6667
+            },
+            "hit@3": {
+              "n": 3,
+              "N": 3,
+              "rate": 1.0
+            }
+          }
+        }
+      }
+    },
+    "B": {
+      "dev": {
+        "hit@1": {
+          "n": 10,
+          "N": 15,
+          "rate": 0.6667
+        },
+        "hit@3": {
+          "n": 14,
+          "N": 15,
+          "rate": 0.9333
+        },
+        "filter_compliance_top3": {
+          "n": 1,
+          "N": 5,
+          "rate": 0.2
+        },
+        "missed_hit@3": [
+          "q08"
+        ],
+        "evidence_split_suspected": [],
+        "mean_latency_ms": 23.9,
+        "by_type": {
+          "dien_dat_lai": {
+            "hit@1": {
+              "n": 1,
+              "N": 3,
+              "rate": 0.3333
+            },
+            "hit@3": {
+              "n": 3,
+              "N": 3,
+              "rate": 1.0
+            }
+          },
+          "dieu_kien_ngoai_le": {
+            "hit@1": {
+              "n": 4,
+              "N": 5,
+              "rate": 0.8
+            },
+            "hit@3": {
+              "n": 4,
+              "N": 5,
+              "rate": 0.8
+            }
+          },
+          "metadata_filter": {
+            "hit@1": {
+              "n": 2,
+              "N": 4,
+              "rate": 0.5
+            },
+            "hit@3": {
+              "n": 4,
+              "N": 4,
+              "rate": 1.0
+            }
+          },
+          "truc_tiep": {
+            "hit@1": {
+              "n": 3,
+              "N": 3,
+              "rate": 1.0
+            },
+            "hit@3": {
+              "n": 3,
+              "N": 3,
+              "rate": 1.0
+            }
+          }
+        }
+      }
+    },
+    "C": {
+      "dev": {
+        "hit@1": {
+          "n": 11,
+          "N": 15,
+          "rate": 0.7333
+        },
+        "hit@3": {
+          "n": 15,
+          "N": 15,
+          "rate": 1.0
+        },
+        "filter_compliance_top3": {
+          "n": 5,
+          "N": 5,
+          "rate": 1.0
+        },
+        "missed_hit@3": [],
+        "evidence_split_suspected": [],
+        "mean_latency_ms": 19.9,
+        "by_type": {
+          "dien_dat_lai": {
+            "hit@1": {
+              "n": 1,
+              "N": 3,
+              "rate": 0.3333
+            },
+            "hit@3": {
+              "n": 3,
+              "N": 3,
+              "rate": 1.0
+            }
+          },
+          "dieu_kien_ngoai_le": {
+            "hit@1": {
+              "n": 4,
+              "N": 5,
+              "rate": 0.8
+            },
+            "hit@3": {
+              "n": 5,
+              "N": 5,
+              "rate": 1.0
+            }
+          },
+          "metadata_filter": {
+            "hit@1": {
+              "n": 3,
+              "N": 4,
+              "rate": 0.75
+            },
+            "hit@3": {
+              "n": 4,
+              "N": 4,
+              "rate": 1.0
+            }
+          },
+          "truc_tiep": {
+            "hit@1": {
+              "n": 3,
+              "N": 3,
+              "rate": 1.0
+            },
+            "hit@3": {
+              "n": 3,
+              "N": 3,
+              "rate": 1.0
+            }
+          }
+        }
+      }
+    }
+  }
+}

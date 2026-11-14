@@ -1,0 +1,36 @@
+{
+  "selected": "C",
+  "tied_with": [],
+  "decided_at": "2026-11-14T05:04:07+00:00",
+  "criterion": [
+    "dev Evidence Hit@3 (higher)",
+    "dev Hit@1 (higher)",
+    "dev filter compliance on filter questions (higher)",
+    "fewer chunks",
+    "lower ingest time"
+  ],
+  "based_on": "metrics_dev.json only",
+  "ranking": [
+    {
+      "strategy": "C",
+      "hit@3": "15/15",
+      "hit@1": "11/15",
+      "filter_compliance": "5/5",
+      "chunks": 552
+    },
+    {
+      "strategy": "B",
+      "hit@3": "14/15",
+      "hit@1": "10/15",
+      "filter_compliance": "1/5",
+      "chunks": 552
+    },
+    {
+      "strategy": "A",
+      "hit@3": "14/15",
+      "hit@1": "9/15",
+      "filter_compliance": "0/5",
+      "chunks": 834
+    }
+  ]
+}
