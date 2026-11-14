@@ -1,26 +1,29 @@
 # Starter · PostgreSQL + pgvector
 
-Bộ khởi động **tùy chọn** cho lab cá nhân. Docker Compose tạo PostgreSQL + pgvector local; các file trong `src/` là **khung pseudocode có TODO**, chưa đọc tài liệu, tạo embedding, lưu vector hay chạy benchmark. Bạn cần tự hiện thực. Vẫn có thể chọn Qdrant, Chroma hoặc vector store tương đương theo [GUIDE.md](../GUIDE.md).
+Docker Compose tạo PostgreSQL + pgvector local. Các khung TODO trong `src/` ban đầu **đã được hiện thực đầy đủ** cho corpus Bộ luật Lao động 2012 và 2019. Thứ tự lệnh chạy toàn bộ pipeline nằm ở [README gốc](../README.md#cách-chạy-lại-từ-thư-mục-starter-windows-python-312).
 
 ## Cấu trúc
 
 ```text
 starter/
-├── docker-compose.yml     # PostgreSQL 16 + pgvector, chỉ mở cổng local
-├── init.sql               # bật extension khi tạo database mới
-├── requirements.txt       # psycopg, pypdf và python-dotenv
-├── .env.example           # cấu hình mẫu; copy thành .env
-├── scripts/check_setup.py # kiểm tra kết nối và extension (đã chạy được)
+├── docker-compose.yml       # PostgreSQL 16 + pgvector, chỉ mở cổng local
+├── init.sql                 # bật extension khi tạo database mới
+├── requirements.txt         # thư viện (OCR, embedding, DB)
+├── requirements.lock.txt    # phiên bản chính xác đã dùng (pip freeze)
+├── .env.example             # cấu hình mẫu; copy thành .env
+├── configs/strategies.json  # tham số A / B / C
+├── scripts/                 # check_setup, build_corpus, ocr_sample_check, verify_benchmark,
+│                            # build_chunks, embed_chunks, ingest_store, audit_metadata, summarize_audit
 ├── src/
-│   ├── models.py          # cấu trúc dữ liệu mẫu
-│   ├── ingestion.py       # TODO: đọc / chuẩn hóa tài liệu
-│   ├── chunking.py        # TODO: chia chunk
-│   ├── embeddings.py      # TODO: chọn model API hoặc local
-│   ├── store.py           # TODO: lưu vector, metadata và filter
-│   ├── evaluation.py      # TODO: chấm truy xuất, lưu trace
-│   └── run.py             # TODO: kết nối các bước thành pipeline
-├── data/                  # bạn tự chuẩn bị corpus được phép sử dụng
-└── results/               # lưu kết quả của bạn
+│   ├── models.py            # DocumentPage, Chunk
+│   ├── ingestion.py         # OCR (Tesseract), chuẩn hóa, làm sạch, kiểm tra cấu trúc Chương/Điều
+│   ├── chunking.py          # A: cửa sổ cố định; B: theo Điều/khoản
+│   ├── embeddings.py        # intfloat/multilingual-e5-base (local)
+│   ├── store.py             # pgvector: schema, upsert, xóa chunk cũ, exact search + filter
+│   ├── evaluation.py        # Hit@1 / Evidence Hit@3, tuân thủ filter
+│   └── run.py               # dev → select → test, ghi trace
+├── data/                    # raw PDF, ocr cache, processed pages, chunks, manifest, ocr_sample
+└── results/                 # log, trace, metrics, audit
 ```
 
 ## 1. Cài và kiểm tra database
@@ -61,16 +64,14 @@ Hai PDF gốc nằm trong `data/raw/` (nguồn, quyền và checksum xem `data/m
 
 Kết quả gồm cache OCR thô `data/ocr/*.ocr.json` (dùng lại nếu PDF và cấu hình OCR không đổi), các trang đã làm sạch `data/processed/pages.jsonl`, `data/manifest.json` và `results/ingestion_log.json` (trang rỗng hoặc độ tin cậy thấp, các chỗ đã sửa, kiểm tra thứ tự Chương/Điều).
 
-## 2. Chọn embedding model
+Kiểm chứng mẫu OCR: chạy `python -X utf8 scripts/ocr_sample_check.py`. Script so text đã làm sạch của trang 6 ở mỗi bản với các chỗ sửa ghi trong `data/ocr_sample/corrections.json` (lập ra khi đối chiếu với ảnh) và báo WER/CER vào `results/ocr_sample_check.json`.
 
-Điền key tương ứng trong `.env` nếu dùng OpenRouter, OpenAI hoặc Gemini; **không commit `.env`**. Model local không cần API key. `requirements.txt` chỉ có dependencies cơ bản: tự cài SDK hoặc thư viện local phù hợp với model bạn chọn và ghi lại version/lệnh cài trong báo cáo. Ghi tên model và số chiều; dùng cùng model cho toàn bộ chiến lược và vector query tương thích vector document.
+## 2. Embedding model
 
-## 3. Hoàn thiện pipeline
+Dùng `intfloat/multilingual-e5-base`, chạy local (768 chiều, tiền tố `query:` / `passage:`), nên không cần API key. Không commit `.env`. Cài torch bản CPU trước:
+`pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cpu`
+rồi mới cài `requirements.txt`. Phiên bản thư viện thực tế đã dùng nằm trong `requirements.lock.txt`.
 
-1. Đặt corpus vào `data/` hoặc cung cấp manifest/hướng dẫn truy cập. Đọc [GUIDE.md](../GUIDE.md) về **30 trang nội dung**, quyền dữ liệu và metadata.
-2. Hoàn thiện từng hàm TODO trong `src/`. Lưu ID tài liệu, nguồn, trang/vị trí và ít nhất một trường filter có ích.
-3. Xây ít nhất ba cấu hình; ví dụ A fixed-size, B theo đoạn, C như B nhưng có filter. Cần cùng corpus, model và benchmark; nạp lại không nhân đôi và xử lý chunk cũ khi dữ liệu đổi.
-4. Tự viết ít nhất 20 câu hỏi kèm evidence, tách dev/test trước khi thử theo [BENCHMARK.md](../BENCHMARK.md). Lưu trace top-3 và báo cáo đủ năm tiêu chí.
-5. Sau khi hoàn thiện, chạy `python -m src.run` từ thư mục `starter/`. Trước khi làm TODO, lệnh này **chủ động báo `NotImplementedError`**.
+## 3. Pipeline
 
-Lưu code, cấu hình, kết quả và lệnh chạy để người chấm tái lập; không commit key, dữ liệu mật hoặc dữ liệu không có quyền chia sẻ.
+Chạy theo thứ tự `build_corpus` → `verify_benchmark` → `build_chunks` → `embed_chunks` → `ingest_store` → `python -m src.run dev | select | test` → `audit_metadata` → `summarize_audit` (lệnh đầy đủ ở README gốc). `src.run test` chỉ chạy được sau `select` và chỉ được chạy một lần.

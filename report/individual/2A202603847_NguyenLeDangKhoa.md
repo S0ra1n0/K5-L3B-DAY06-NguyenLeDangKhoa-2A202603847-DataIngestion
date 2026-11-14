@@ -27,7 +27,9 @@ Mọi số liệu dưới đây lấy từ các file trong `starter/results/`; �
     - Sửa số La Mã và số điều theo thứ tự: "Điều 1109" thành 110, "XVH" thành XVII.
     - Loại trừ các tiêu đề điều trích từ luật khác trong Điều 219.
   - **Kiểm tra cấu trúc:** đủ 17 chương / 242 điều (2012) và 17 chương / 220 điều (2019), liên tục, không thiếu điều nào.
-  - **Giới hạn:** không sửa chính tả, nên vẫn còn chữ sai dấu do OCR ("đê tuyên dụng", "thâm quyên"). Evidence của benchmark được copy nguyên văn từ text đã làm sạch.
+  - **Kiểm chứng mẫu OCR:** so ảnh trang 6 của mỗi bản với text đã làm sạch, ghi từng chỗ sai trong [corrections.json](../../starter/data/ocr_sample/corrections.json), rồi tính lỗi bằng `scripts/ocr_sample_check.py`. Kết quả: WER 4,2% (19/454 từ) và CER 0,9% với bản 2019; WER 1,6% (8/489) và CER 0,4% với bản 2012. Tổng cộng **WER 2,9%, CER 0,7%**. Lỗi chủ yếu là sai dấu mũ hoặc dấu thanh ("tiên"/"tiền", "quyên"/"quyền", "môi"/"mỗi") và vài ký tự rác ("cung cấp b thông tin").
+  - **Giới hạn:** không sửa chính tả, nên vẫn còn chữ sai dấu do OCR ("đê tuyên dụng", "thâm quyên"). Evidence của benchmark được copy nguyên văn từ text đã làm sạch. Mẫu kiểm chứng chỉ gồm 2/151 trang, và Claude là người đọc ảnh, tôi đối chiếu lại.
+  - **Tái lập:** chạy lại bước làm sạch (từ cache OCR) và bước chunking cho kết quả giống hệt các file đã commit. Phiên bản thư viện chính xác nằm trong `starter/requirements.lock.txt`.
 - **Embedding, vector store, metric, lệnh chạy và chi phí:**
   - **Embedding:** `intfloat/multilingual-e5-base` (revision `d1287505…`), chạy local bằng sentence-transformers 4.1.0 trên torch 2.7.1+cpu. 768 chiều, tiền tố `query:` / `passage:`, vector đã chuẩn hóa. Không chunk nào vượt 512 token.
   - **Vector store:** PostgreSQL 16.16 + pgvector 0.8.7 (Docker), dùng khoảng cách cosine `<=>` và exact search (không có index ANN).

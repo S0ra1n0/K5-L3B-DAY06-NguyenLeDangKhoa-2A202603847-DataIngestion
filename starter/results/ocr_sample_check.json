@@ -1,0 +1,32 @@
+{
+  "method": "Trang 6 của mỗi PDF được render ở 150 DPI và so từng dòng với text OCR đã làm sạch (data/processed/pages.jsonl). Mỗi chỗ khác ảnh gốc được ghi thành cặp [sai, đúng]. Áp các sửa này lên text OCR thì ra bản chuẩn của trang. Đổi 'CHƯƠNG' thành 'Chương' là chuẩn hóa có chủ đích, không tính là lỗi.",
+  "checked_by": "Claude (AI assistant) đọc ảnh, học viên đối chiếu lại",
+  "pages": {
+    "blld-2019#p6": {
+      "words": 454,
+      "word_errors": 19,
+      "wer": 0.0419,
+      "chars": 2040,
+      "char_errors": 19,
+      "cer": 0.0093,
+      "corrections": 14
+    },
+    "blld-2012#p6": {
+      "words": 489,
+      "word_errors": 8,
+      "wer": 0.0164,
+      "chars": 2223,
+      "char_errors": 9,
+      "cer": 0.004,
+      "corrections": 8
+    }
+  },
+  "total": {
+    "words": 943,
+    "word_errors": 27,
+    "chars": 4263,
+    "char_errors": 28,
+    "wer": 0.0286,
+    "cer": 0.0066
+  }
+}

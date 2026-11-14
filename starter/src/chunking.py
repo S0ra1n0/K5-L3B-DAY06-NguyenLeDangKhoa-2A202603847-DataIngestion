@@ -84,11 +84,6 @@ def fixed_size(page: DocumentPage, size: int, overlap: int, strategy: str = "A")
     return chunks
 
 
-def by_paragraph(page: DocumentPage, max_size: int) -> list[Chunk]:
-    """Kept for the starter interface; this corpus uses by_article for strategy B."""
-    raise NotImplementedError("Use by_article(pages, max_size) for the Labor Code corpus")
-
-
 # --------------------------------------------------------------------------- B
 
 def _units(pages: list[DocumentPage]) -> list[dict[str, Any]]:

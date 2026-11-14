@@ -1,0 +1,32 @@
+{
+  "method": "Trang 6 của mỗi PDF được render ở 150 DPI và so từng dòng với text OCR đã làm sạch (data/processed/pages.jsonl). Mỗi chỗ khác ảnh gốc được ghi thành cặp [sai, đúng]. Áp các sửa này lên text OCR thì ra bản chuẩn của trang. Đổi 'CHƯƠNG' thành 'Chương' là chuẩn hóa có chủ đích, không tính là lỗi.",
+  "checked_by": "Claude (AI assistant) đọc ảnh, học viên đối chiếu lại",
+  "pages": {
+    "blld-2019#p6": [
+      ["đê tuyên dụng", "để tuyển dụng"],
+      ["trả chỉ phí", "trả chi phí"],
+      ["việc tuyến dụng", "việc tuyển dụng"],
+      ["sử dụng số quản lý", "sử dụng sổ quản lý"],
+      ["có thâm quyên yêu cầu", "có thẩm quyền yêu cầu"],
+      ["quy định chỉ tiết", "quy định chi tiết"],
+      ["HỢP ĐÔNG LAO ĐỘNG\nMục", "HỢP ĐỒNG LAO ĐỘNG\nMục"],
+      ["GIAO KẾT HỢP ĐÒNG", "GIAO KẾT HỢP ĐỒNG"],
+      ["lao động Về việc làm", "lao động về việc làm"],
+      ["trả công, tiên lương, điều kiện", "trả công, tiền lương, điều kiện"],
+      ["quyên và nghĩa vụ của môi bên", "quyền và nghĩa vụ của mỗi bên"],
+      ["hiện vê việc làm có trả công, tiên lương", "hiện về việc làm có trả công, tiền lương"],
+      ["giao kêt hợp đông", "giao kết hợp đồng"],
+      ["như bợp đồng", "như hợp đồng"]
+    ],
+    "blld-2012#p6": [
+      ["HỢP ĐÔNG LAO ĐỘNG\nMục", "HỢP ĐỒNG LAO ĐỘNG\nMục"],
+      ["GIAO KÉT", "GIAO KẾT"],
+      ["lao động vê việc làm", "lao động về việc làm"],
+      ["của môi bên", "của mỗi bên"],
+      ["bình đắng", "bình đẳng"],
+      ["hợp đồng. lao động bằng văn bản", "hợp đồng lao động bằng văn bản"],
+      ["cung cấp b thông tin", "cung cấp thông tin"],
+      ["người lao: động yêu cầu", "người lao động yêu cầu"]
+    ]
+  }
+}

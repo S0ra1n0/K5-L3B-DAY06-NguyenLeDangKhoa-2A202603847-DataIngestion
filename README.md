@@ -12,7 +12,8 @@
 | Thành phần | Đường dẫn |
 |---|---|
 | Corpus gốc (2 PDF scan chính thức) và manifest | `starter/data/raw/`, `starter/data/manifest.json` |
-| Trang đã OCR và làm sạch, log lỗi | `starter/data/processed/pages.jsonl`, `starter/results/ingestion_log.json` |
+| Trang đã OCR và làm sạch, log lỗi, kiểm chứng mẫu OCR | `starter/data/processed/pages.jsonl`, `starter/results/ingestion_log.json`, `starter/results/ocr_sample_check.json` |
+| Phiên bản thư viện chính xác | `starter/requirements.lock.txt` |
 | Benchmark 20 câu (15 dev / 5 test) | `benchmark/questions.json`, `benchmark/README.md` |
 | Cấu hình A/B/C, experiment log | `starter/configs/strategies.json`, `artifacts/experiment_log.csv` |
 | Code | `starter/src/` (ingestion, chunking, embeddings, store, evaluation, run), `starter/scripts/` |
@@ -44,6 +45,7 @@ docker compose -p day6_student_starter up -d --wait
 
 ```bash
 .venv/Scripts/python -X utf8 scripts/build_corpus.py       # OCR + làm sạch + manifest (OCR ~8 phút lần đầu, sau đó dùng cache)
+.venv/Scripts/python -X utf8 scripts/ocr_sample_check.py   # kiểm chứng mẫu OCR: WER/CER trên 2 trang so với ảnh
 .venv/Scripts/python -X utf8 scripts/verify_benchmark.py   # kiểm chứng 34 đoạn evidence
 .venv/Scripts/python -X utf8 scripts/build_chunks.py       # chunk A và B
 .venv/Scripts/python -X utf8 scripts/embed_chunks.py       # multilingual-e5-base, CPU (~2 phút + tải model ~1,1 GB lần đầu)
