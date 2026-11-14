@@ -1,0 +1,17 @@
+strategy,question_id,score_0_2,evidence_rank,reason,labeler,student_review
+A,q16,1,3,"Evidence 'nam đủ 60 tuổi, nữ đủ 55 tuổi' (kèm điều kiện đóng BHXH) có ở r3 nhưng metadata ghi Điều 186 trong khi nội dung là Điều 187, nên truy nguồn theo điều bị sai; r1-r2 là Điều 219 bản 2019 (lương hưu theo Luật BHXH) gây nhiễu.","Claude (AI assistant) - draft, needs student review",ok
+A,q17,2,1,r1 có đủ 'Kể từ năm 2021 ... đủ 55 tuổi 04 tháng đối với lao động nữ' và lộ trình; r2 nối tiếp phần tăng 04 tháng mỗi năm; nguồn Điều 169 trang 60.,"Claude (AI assistant) - draft, needs student review",ok
+A,q18,2,1,r1 có 'Quốc khánh: 02 ngày (ngày 02 tháng 9 ... và 01 ngày liền kề)'; chunk thiếu tiêu đề Điều 112 nhưng r2 chứa tiêu đề và câu dẫn 'được nghỉ ... hưởng nguyên lương'. r3 là Điều 115 bản 2012 (khác năm) nhưng không chứa mức 01 ngày nên không mâu thuẫn trực tiếp.,"Claude (AI assistant) - draft, needs student review",ok
+A,q19,2,1,"r1 (BLLĐ 2012 Điều 124) và r3 (BLLĐ 2019 Điều 123) đều nêu rõ 06 tháng và ngoại lệ 12 tháng khi liên quan tài chính, tài sản.","Claude (AI assistant) - draft, needs student review",ok
+A,q20,2,1,r1 (2012 Điều 155) có đủ chủ thể 'không được sử dụng lao động nữ làm việc ban đêm' và điều kiện 'từ tháng thứ 06 nếu làm việc ở vùng cao... hải đảo'.,"Claude (AI assistant) - draft, needs student review",ok
+B,q16,2,3,r3 là trọn Điều 187 (2012) với đủ điều kiện và độ tuổi; r1-r2 là Điều 219 bản 2019 gây nhiễu nhưng không mâu thuẫn trực tiếp.,"Claude (AI assistant) - draft, needs student review",ok
+B,q17,2,1,r1 là trọn Điều 169 (2019) gồm lộ trình và mức 55 tuổi 04 tháng từ 2021.,"Claude (AI assistant) - draft, needs student review",ok
+B,q18,2,1,r1 là trọn Điều 112 (2019): Quốc khánh 02 ngày. Lưu ý r2 là Điều 115 bản 2012 ghi 'Quốc khánh 01 ngày' (mâu thuẫn); phải dựa vào metadata year để chọn đúng.,"Claude (AI assistant) - draft, needs student review",ok
+B,q19,2,1,"r1 trọn Điều 123 (2019), r2 trọn Điều 124 (2012): đều đủ quy định 12 tháng.","Claude (AI assistant) - draft, needs student review",ok
+B,q20,2,1,r1 trọn khoản 1 Điều 137 (2019) với chủ thể và điều kiện tháng thứ 06.,"Claude (AI assistant) - draft, needs student review",ok
+C,q16,2,1,Filter year=2012: r1 là trọn Điều 187 (2012); không còn nhiễu bản 2019.,"Claude (AI assistant) - draft, needs student review",ok
+C,q17,2,1,Filter year=2019: r1 trọn Điều 169; r2-r3 là Điều 219 (cùng năm) nhắc tuổi nghỉ hưu nhưng không mâu thuẫn.,"Claude (AI assistant) - draft, needs student review",ok
+C,q18,2,1,Filter year=2019: r1 trọn Điều 112; không còn mức 01 ngày của bản 2012 trong top-3.,"Claude (AI assistant) - draft, needs student review",ok
+C,q19,2,1,"Không có filter (câu không nêu năm): giống B, r1 Điều 123 (2019) và r2 Điều 124 (2012) đều đủ.","Claude (AI assistant) - draft, needs student review",ok
+C,q20,2,1,"Không có filter: giống B, r1 trọn khoản 1 Điều 137 (2019).","Claude (AI assistant) - draft, needs student review",ok
+,,,,,,

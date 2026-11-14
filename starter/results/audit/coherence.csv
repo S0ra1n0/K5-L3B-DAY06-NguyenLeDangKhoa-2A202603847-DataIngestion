@@ -1,0 +1,32 @@
+position,page,strategy,chunk_id,score_0_2,reason,labeler,student_review
+blld-2012 Điều 10 (đoạn đầu),4,A,c82cbb5f9e18ad58,1,"Bắt đầu giữa câu ('thành niên trái pháp luật.'), lẫn toàn bộ Điều 9; khoản 1 Điều 10 trọn câu nhưng thiếu khoản 2 nên chưa trọn điều.","Claude (AI assistant) - draft, needs student review",ok
+blld-2012 Điều 10 (đoạn đầu),4,B,d878fb9c0c2824d0,2,"Một chunk = trọn Điều 10 (tiêu đề + khoản 1-2), tự hiểu được.","Claude (AI assistant) - draft, needs student review",ok
+blld-2012 Điều 10 (đoạn đầu),4,C,d878fb9c0c2824d0,2,"Cùng chunk với B (C chỉ thêm filter khi truy xuất). Một chunk = trọn Điều 10 (tiêu đề + khoản 1-2), tự hiểu được.","Claude (AI assistant) - draft, needs student review",ok
+blld-2012 Điều 50 (đoạn đầu),16,A,348c0f451d9406dc,1,Bắt đầu bằng đuôi Điều 49; khoản 1 Điều 50 có đủ a)-c) nhưng điểm d) bị cắt giữa từ ('người lao độn'); thiếu khoản 2-3.,"Claude (AI assistant) - draft, needs student review",ok
+blld-2012 Điều 50 (đoạn đầu),16,B,e9c5b4c473323f25,2,"Trọn Điều 50 kèm tiêu đề Mục 4; giữ đủ khoản 1 (a-d), 2, 3.","Claude (AI assistant) - draft, needs student review",ok
+blld-2012 Điều 50 (đoạn đầu),16,C,e9c5b4c473323f25,2,"Cùng chunk với B (C chỉ thêm filter khi truy xuất). Trọn Điều 50 kèm tiêu đề Mục 4; giữ đủ khoản 1 (a-d), 2, 3.","Claude (AI assistant) - draft, needs student review",ok
+blld-2012 Điều 90 (đoạn đầu),27,A,5c0a745602630773,1,Mở đầu bằng đuôi Điều 89; khoản 1 trọn ý nhưng khoản 2 bị cắt giữa câu ('căn cứ vào năng ').,"Claude (AI assistant) - draft, needs student review",ok
+blld-2012 Điều 90 (đoạn đầu),27,B,defca6dabae163d9,2,Trọn Điều 90 kèm tiêu đề Chương VI.,"Claude (AI assistant) - draft, needs student review",ok
+blld-2012 Điều 90 (đoạn đầu),27,C,defca6dabae163d9,2,Cùng chunk với B (C chỉ thêm filter khi truy xuất). Trọn Điều 90 kèm tiêu đề Chương VI.,"Claude (AI assistant) - draft, needs student review",ok
+blld-2012 Điều 130 (đoạn đầu),37,A,3bc16f18efb9f1d1,1,"Câu đầu khoản 1 trọn ý, nhưng đoạn ngoại lệ ngay sau bị cắt ở 'nơi người lao động làm việc,' nên mất hệ quả (bồi thường tối đa 03 tháng lương).","Claude (AI assistant) - draft, needs student review",ok
+blld-2012 Điều 130 (đoạn đầu),37,B,1f1ff81b20a17880,2,Trọn khoản 1 gồm cả đoạn ngoại lệ và khoản 2 (điều dài nhưng vẫn dưới 1.200 ký tự).,"Claude (AI assistant) - draft, needs student review",ok
+blld-2012 Điều 130 (đoạn đầu),37,C,1f1ff81b20a17880,2,Cùng chunk với B (C chỉ thêm filter khi truy xuất). Trọn khoản 1 gồm cả đoạn ngoại lệ và khoản 2 (điều dài nhưng vẫn dưới 1.200 ký tự).,"Claude (AI assistant) - draft, needs student review",ok
+blld-2012 Điều 170 (đoạn đầu),48,A,d736e79a1b104045,0,"Chỉ có tiêu đề và nửa dòng đầu khoản 1 ('...nhà thầu trong nước c'); nội dung quy định bị cắt, không hiểu được.","Claude (AI assistant) - draft, needs student review",ok
+blld-2012 Điều 170 (đoạn đầu),48,B,de247774c9fa6d4e,2,Trọn Điều 170 (khoản 1-2); thiếu dấu chấm sau '1' do OCR nhưng không ảnh hưởng ý.,"Claude (AI assistant) - draft, needs student review",ok
+blld-2012 Điều 170 (đoạn đầu),48,C,de247774c9fa6d4e,2,Cùng chunk với B (C chỉ thêm filter khi truy xuất). Trọn Điều 170 (khoản 1-2); thiếu dấu chấm sau '1' do OCR nhưng không ảnh hưởng ý.,"Claude (AI assistant) - draft, needs student review",ok
+blld-2019 Điều 10 (đoạn đầu),5,A,9cf1bcf973be5394,2,"Chứa trọn Điều 10 (khoản 1-2); chỉ có mẩu 'làm.' thừa ở đầu, không ảnh hưởng ý.","Claude (AI assistant) - draft, needs student review",ok
+blld-2019 Điều 10 (đoạn đầu),5,B,f9066d07b35d31c0,2,Trọn Điều 10.,"Claude (AI assistant) - draft, needs student review",ok
+blld-2019 Điều 10 (đoạn đầu),5,C,f9066d07b35d31c0,2,Cùng chunk với B (C chỉ thêm filter khi truy xuất). Trọn Điều 10.,"Claude (AI assistant) - draft, needs student review",ok
+blld-2019 Điều 50 (đoạn đầu),20,A,0ec9985887cca948,2,Điều 50 (một câu) trọn vẹn; chunk lẫn đuôi Điều 49 bắt đầu giữa từ và tiêu đề Điều 51 bị cắt nhưng vị trí được chấm tự hiểu được.,"Claude (AI assistant) - draft, needs student review",ok
+blld-2019 Điều 50 (đoạn đầu),20,B,cbcdcd7d7ca7f87e,2,Trọn Điều 50 (một câu) kèm tiêu đề; ngắn nhưng tự hiểu được.,"Claude (AI assistant) - draft, needs student review",ok
+blld-2019 Điều 50 (đoạn đầu),20,C,cbcdcd7d7ca7f87e,2,Cùng chunk với B (C chỉ thêm filter khi truy xuất). Trọn Điều 50 (một câu) kèm tiêu đề; ngắn nhưng tự hiểu được.,"Claude (AI assistant) - draft, needs student review",ok
+blld-2019 Điều 90 (đoạn đầu),35,A,a728ca094c32ea86,1,"Khoản 1 trọn ý; khoản 2 bị cắt giữa từ ('chức d'), thiếu khoản 3; mở đầu bằng Điều 89.","Claude (AI assistant) - draft, needs student review",ok
+blld-2019 Điều 90 (đoạn đầu),35,B,8e12665856198ff4,2,Trọn Điều 90 kèm tiêu đề Chương VI.,"Claude (AI assistant) - draft, needs student review",ok
+blld-2019 Điều 90 (đoạn đầu),35,C,8e12665856198ff4,2,Cùng chunk với B (C chỉ thêm filter khi truy xuất). Trọn Điều 90 kèm tiêu đề Chương VI.,"Claude (AI assistant) - draft, needs student review",ok
+blld-2019 Điều 130 (đoạn đầu),48,A,8e5fb33d04861b67,1,Khoản 1 (vị trí chấm) bị cắt ở từ cuối ('nhân thân và t'): hiểu được phần lớn nhưng mất yếu tố cuối; thiếu khoản 2.,"Claude (AI assistant) - draft, needs student review",ok
+blld-2019 Điều 130 (đoạn đầu),48,B,9e54f3f4bf0e8153,2,Trọn Điều 130 (khoản 1-2).,"Claude (AI assistant) - draft, needs student review",ok
+blld-2019 Điều 130 (đoạn đầu),48,C,9e54f3f4bf0e8153,2,Cùng chunk với B (C chỉ thêm filter khi truy xuất). Trọn Điều 130 (khoản 1-2).,"Claude (AI assistant) - draft, needs student review",ok
+blld-2019 Điều 170 (đoạn đầu),61,A,4ee7213e6746a7ee,1,Khoản 1 trọn câu; khoản 2 bị cắt giữa câu; chunk mở đầu bằng đuôi Điều 169.,"Claude (AI assistant) - draft, needs student review",ok
+blld-2019 Điều 170 (đoạn đầu),61,B,5d45cddbe5373703,2,Trọn Điều 170 kèm tiêu đề Chương XIII.,"Claude (AI assistant) - draft, needs student review",ok
+blld-2019 Điều 170 (đoạn đầu),61,C,5d45cddbe5373703,2,Cùng chunk với B (C chỉ thêm filter khi truy xuất). Trọn Điều 170 kèm tiêu đề Chương XIII.,"Claude (AI assistant) - draft, needs student review",ok
+,,,,,,,

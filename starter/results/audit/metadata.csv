@@ -1,0 +1,47 @@
+strategy,question_id,rank,chunk_id,document_id,pages,year,chapter,article,source_ok,pages_ok,year_ok,article_ok,chapter_ok,complete_and_correct,note,labeler,student_review
+A,q16,1,bdcd13ea9b9fdd7d,blld-2019,81,2019,XVII,219,1,1,1,1,1,1,,auto-check + Claude review (draft),ok
+A,q16,2,760f7d7f1e9fc9fb,blld-2019,81,2019,XVII,219,1,1,1,1,1,1,,auto-check + Claude review (draft),ok
+A,q16,3,266627642a5fc13c,blld-2012,52,2012,XII,186,1,1,1,0,1,0,chunk also contains Điều 187 but metadata says Điều 186 only; evidence hit,auto-check + Claude review (draft),ok
+A,q17,1,d1b14c73de1a0188,blld-2019,60,2019,XII,169,1,1,1,1,1,1,evidence hit,auto-check + Claude review (draft),ok
+A,q17,2,3d75b32c066e7026,blld-2019,60,2019,XII,169,1,1,1,1,1,1,,auto-check + Claude review (draft),ok
+A,q17,3,bdcd13ea9b9fdd7d,blld-2019,81,2019,XVII,219,1,1,1,1,1,1,,auto-check + Claude review (draft),ok
+A,q18,1,3821b4cc541f3193,blld-2019,42,2019,VII,112,1,1,1,1,1,1,evidence hit,auto-check + Claude review (draft),ok
+A,q18,2,4711e6f8ea5f1479,blld-2019,41,2019,VII,111,1,1,1,0,1,0,chunk also contains Điều 112 but metadata says Điều 111 only,auto-check + Claude review (draft),ok
+A,q18,3,fc30fb142d48a39f,blld-2012,33,2012,VII,115,1,1,1,0,1,0,chunk also contains Điều 116 but metadata says Điều 115 only,auto-check + Claude review (draft),ok
+A,q19,1,7c5cafba76019a52,blld-2012,35,2012,VIII,124,1,1,1,1,1,1,evidence hit,auto-check + Claude review (draft),ok
+A,q19,2,408075a41d476f74,blld-2012,36,2012,VIII,126,1,1,1,1,1,1,,auto-check + Claude review (draft),ok
+A,q19,3,6da6c33e04af7728,blld-2019,46,2019,VIII,122,1,1,1,0,1,0,chunk also contains Điều 123 but metadata says Điều 122 only; evidence hit,auto-check + Claude review (draft),ok
+A,q20,1,661b719b3678be38,blld-2012,44,2012,X,155,1,1,1,1,1,1,evidence hit,auto-check + Claude review (draft),ok
+A,q20,2,f489a53bc053f7c0,blld-2019,50,2019,X,137,1,1,1,1,1,1,,auto-check + Claude review (draft),ok
+A,q20,3,44a964d9bad5b8d7,blld-2019,50,2019,X,136,1,1,1,0,1,0,chunk also contains Điều 137 but metadata says Điều 136 only,auto-check + Claude review (draft),ok
+B,q16,1,652b409fad761b0a,blld-2019,81 82,2019,XVII,219,1,1,1,1,1,1,repeated article heading (copied from first page of the article),auto-check + Claude review (draft),ok
+B,q16,2,d96eb9b4ebb92126,blld-2019,80,2019,XVII,219,1,1,1,1,1,1,,auto-check + Claude review (draft),ok
+B,q16,3,67976ce3fa4d3293,blld-2012,52,2012,XII,187,1,1,1,1,1,1,evidence hit,auto-check + Claude review (draft),ok
+B,q17,1,c40fad20889e6976,blld-2019,60,2019,XII,169,1,1,1,1,1,1,evidence hit,auto-check + Claude review (draft),ok
+B,q17,2,7db634b418b35ad9,blld-2019,81,2019,XVII,219,1,1,1,1,1,1,repeated article heading (copied from first page of the article),auto-check + Claude review (draft),ok
+B,q17,3,67976ce3fa4d3293,blld-2012,52,2012,XII,187,1,1,1,1,1,1,,auto-check + Claude review (draft),ok
+B,q18,1,70c23213ef936eb5,blld-2019,41 42,2019,VII,112,1,1,1,1,1,1,evidence hit,auto-check + Claude review (draft),ok
+B,q18,2,cc4398bb8e0120b6,blld-2012,33,2012,VII,115,1,1,1,1,1,1,,auto-check + Claude review (draft),ok
+B,q18,3,b268f97122b4fcbd,blld-2012,32,2012,VII,111,1,1,1,1,1,1,,auto-check + Claude review (draft),ok
+B,q19,1,ddd5e6ef6c45d7a2,blld-2019,46,2019,VIII,123,1,1,1,1,1,1,evidence hit,auto-check + Claude review (draft),ok
+B,q19,2,4829c9234e35ab72,blld-2012,35 36,2012,VIII,124,1,1,1,1,1,1,evidence hit,auto-check + Claude review (draft),ok
+B,q19,3,529fbe41892d5907,blld-2012,36,2012,VIII,127,1,1,1,1,1,1,,auto-check + Claude review (draft),ok
+B,q20,1,53201ad6737fab80,blld-2019,50,2019,X,137,1,1,1,1,1,1,evidence hit,auto-check + Claude review (draft),ok
+B,q20,2,ffe02f16c93fddb4,blld-2012,44,2012,X,155,1,1,1,1,1,1,evidence hit,auto-check + Claude review (draft),ok
+B,q20,3,0ec68a22701a6582,blld-2019,50,2019,X,137,1,1,1,1,1,1,,auto-check + Claude review (draft),ok
+C,q16,1,67976ce3fa4d3293,blld-2012,52,2012,XII,187,1,1,1,1,1,1,evidence hit,auto-check + Claude review (draft),ok
+C,q16,2,70275f48139f8ef1,blld-2012,46,2012,XI,164,1,1,1,1,1,1,,auto-check + Claude review (draft),ok
+C,q16,3,e8907a2a27d5af96,blld-2012,67,2012,XVII,240,1,1,1,1,1,1,,auto-check + Claude review (draft),ok
+C,q17,1,c40fad20889e6976,blld-2019,60,2019,XII,169,1,1,1,1,1,1,evidence hit,auto-check + Claude review (draft),ok
+C,q17,2,7db634b418b35ad9,blld-2019,81,2019,XVII,219,1,1,1,1,1,1,repeated article heading (copied from first page of the article),auto-check + Claude review (draft),ok
+C,q17,3,652b409fad761b0a,blld-2019,81 82,2019,XVII,219,1,1,1,1,1,1,repeated article heading (copied from first page of the article),auto-check + Claude review (draft),ok
+C,q18,1,70c23213ef936eb5,blld-2019,41 42,2019,VII,112,1,1,1,1,1,1,evidence hit,auto-check + Claude review (draft),ok
+C,q18,2,6049ee563eb186f4,blld-2019,41,2019,VII,111,1,1,1,1,1,1,,auto-check + Claude review (draft),ok
+C,q18,3,5a45954688b086dc,blld-2019,41,2019,VII,109,1,1,1,1,1,1,,auto-check + Claude review (draft),ok
+C,q19,1,ddd5e6ef6c45d7a2,blld-2019,46,2019,VIII,123,1,1,1,1,1,1,evidence hit,auto-check + Claude review (draft),ok
+C,q19,2,4829c9234e35ab72,blld-2012,35 36,2012,VIII,124,1,1,1,1,1,1,evidence hit,auto-check + Claude review (draft),ok
+C,q19,3,529fbe41892d5907,blld-2012,36,2012,VIII,127,1,1,1,1,1,1,,auto-check + Claude review (draft),ok
+C,q20,1,53201ad6737fab80,blld-2019,50,2019,X,137,1,1,1,1,1,1,evidence hit,auto-check + Claude review (draft),ok
+C,q20,2,ffe02f16c93fddb4,blld-2012,44,2012,X,155,1,1,1,1,1,1,evidence hit,auto-check + Claude review (draft),ok
+C,q20,3,0ec68a22701a6582,blld-2019,50,2019,X,137,1,1,1,1,1,1,,auto-check + Claude review (draft),ok
+,,,,,,,,,,,,,,,,,
