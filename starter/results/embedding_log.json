@@ -1,0 +1,53 @@
+{
+  "embedder": {
+    "provider": "local (sentence-transformers)",
+    "model": "intfloat/multilingual-e5-base",
+    "revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+    "dimensions": 768,
+    "max_seq_length_tokens": 512,
+    "query_prefix": "query: ",
+    "passage_prefix": "passage: ",
+    "normalized": true,
+    "similarity": "cosine",
+    "device": "cpu",
+    "batch_size": 32,
+    "versions": {
+      "sentence_transformers": "4.1.0",
+      "transformers": "4.57.6",
+      "torch": "2.7.1+cpu"
+    },
+    "cost_usd": 0.0
+  },
+  "model_load_seconds": 11.4,
+  "sets": {
+    "A": {
+      "chunks": 834,
+      "seconds": 55.1,
+      "chunks_per_second": 15.1,
+      "tokens_max": 166,
+      "tokens_median": 132,
+      "truncated_chunks": 0,
+      "norm_min": 1.0,
+      "norm_max": 1.0,
+      "fingerprint": "41101fea2eb5d7da282d77200569ccbb66214eb4"
+    },
+    "B": {
+      "chunks": 552,
+      "seconds": 51.0,
+      "chunks_per_second": 10.8,
+      "tokens_max": 357,
+      "tokens_median": 162,
+      "truncated_chunks": 0,
+      "norm_min": 1.0,
+      "norm_max": 1.0,
+      "fingerprint": "c8f3535aac72ea7d59c26d6503aacdbdbe220995"
+    }
+  },
+  "queries": {
+    "count": 20,
+    "seconds": 0.85,
+    "prefix": "query: ",
+    "tokens_max": 38
+  },
+  "determinism_max_abs_diff": 0.0
+}

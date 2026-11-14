@@ -11,3 +11,6 @@ __pycache__/
 
 # Tesseract language model (downloaded, ~12 MB; see starter/README)
 starter/tessdata/
+
+# Embedding vectors (rebuild with starter/scripts/embed_chunks.py)
+starter/data/vectors/

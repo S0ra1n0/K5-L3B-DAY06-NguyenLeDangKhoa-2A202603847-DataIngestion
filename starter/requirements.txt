@@ -6,3 +6,8 @@ python-dotenv>=1,<2
 pytesseract==0.3.13
 pillow>=11,<13
 pypdfium2>=4.30,<6
+# Embeddings: intfloat/multilingual-e5-base, local. CPU torch:
+#   pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cpu
+torch==2.7.1
+sentence-transformers==4.1.0
+numpy>=1.26
