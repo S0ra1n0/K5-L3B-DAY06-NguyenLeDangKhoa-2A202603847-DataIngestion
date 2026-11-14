@@ -7,7 +7,7 @@
   },
   "total_physical_pages": 151,
   "total_content_pages": 151,
-  "total_content_chars": 349974,
+  "total_content_chars": 349975,
   "documents": [
     {
       "source_id": "blld-2012",
@@ -104,7 +104,7 @@
       ],
       "content_page_count": 68,
       "excluded_pages": [],
-      "content_chars": 160683,
+      "content_chars": 160684,
       "notes": "Bản scan; ảnh có watermark LuatVietnam, lớp text chỉ chứa 'www.LuatVietnam.vn'. Watermark bị loại khi làm sạch."
     },
     {

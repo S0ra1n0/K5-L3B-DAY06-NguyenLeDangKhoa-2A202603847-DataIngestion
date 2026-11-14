@@ -220,6 +220,88 @@ def _starts_block(line: str) -> bool:
                 or RE_KHOAN.match(line) or RE_DIEM.match(line))
 
 
+# Điểm (list items) in Vietnamese legal text are lettered a) b) c) d) đ) e) g) h) i) k) ...
+POINT_LETTERS = "a b c d đ e g h i k l m n o p q r s t u v x y".split()
+RE_POINT_ANY = re.compile(r"^([^\s()]{1,2})\)\s*(?=\S)")
+# valid letters OCR swaps for each other; fixed only when the sequence demands it
+POINT_CONFUSABLE = {"e": {"c"}, "c": {"e"}, "đ": {"d"}, "d": {"đ"}}
+RE_MIDLINE_POINT = re.compile(r"(?<=[:;])\s+(?=[^\s()]{1,3}\)\s+\S)")
+RE_MIDLINE_POINT_Y = re.compile(r"(?<=[:;])\s+([a-zđ])ỳ\s+(?=[A-ZĐÂĂÊÔƠƯ])")
+RE_LINE_POINT_Y = re.compile(r"^([a-zđ])ỳ\s+(?=[A-ZĐÂĂÊÔƠƯ])")
+
+
+def _last_text(lines: list[str]) -> str:
+    return next((line for line in reversed(lines) if line), "")
+
+
+def _split_midline_points(lines: list[str], issues: list[str]) -> list[str]:
+    """Break "...36 tháng: ơ) Ít nhất..." into two lines when the item text is capitalized.
+
+    Also repairs the closing ')' read as 'ỳ' ("...: đỳ Yêu cầu"), only in this mid-line
+    position after ':'/';' so ordinary words such as "kỳ" are never touched.
+    """
+    out: list[str] = []
+    for line in lines:
+        def _close(m: re.Match) -> str:
+            issues.append("fix_point_close_y")
+            return f" {m.group(1)}) "
+        line = RE_MIDLINE_POINT_Y.sub(_close, line)
+        start = 0
+        for m in RE_MIDLINE_POINT.finditer(line):
+            after = line[m.end():]
+            body = after[after.index(")") + 1:].lstrip()
+            if body[:1].isupper() or body[:1].isdigit():
+                out.append(line[start:m.start()])
+                start = m.end()
+                issues.append("split_midline_point")
+        out.append(line[start:])
+    return out
+
+
+def _fix_point_marker(line: str, prev: str, last_point: str | None,
+                      issues: list[str]) -> tuple[str, str | None]:
+    """Repair an OCR-garbled điểm marker ("8)", "©)", "ơ)" ...) from the list sequence.
+
+    The letter is never guessed from the glyph: inside a list of điểm (since the last
+    khoản/Điều) it is the next letter; otherwise, after a line that opens a list (ends
+    with ':') it is "a". A valid letter that breaks the sequence is corrected only for
+    known look-alikes (c/e, d/đ). Unresolvable markers are logged.
+    Lines starting a new khoản/Điều reset the sequence.
+    """
+    if RE_KHOAN.match(line) or match_dieu(line):
+        return line, None
+    successor = (POINT_LETTERS[POINT_LETTERS.index(last_point) + 1]
+                 if last_point in POINT_LETTERS[:-1] else None)
+    y = RE_LINE_POINT_Y.match(line)
+    if y and y.group(1) == successor and prev.endswith((":", ";")):
+        issues.append("fix_point_close_y")           # "đỳ Yêu cầu" -> "đ) Yêu cầu"
+        return f"{successor}) {line[y.end():]}", successor
+    m = RE_POINT_ANY.match(line)
+    if not m:
+        return line, last_point
+    token, rest = m.group(1), line[m.end():]
+    if token in POINT_LETTERS:
+        if not line[m.end() - 1].isspace():          # "b)14 ngày" -> "b) 14 ngày"
+            issues.append("fix_point_spacing")
+        if successor and token != successor and successor in POINT_CONFUSABLE.get(token, ()):
+            issues.append(f"fix_point_letter:{token}->{successor}")   # "e)" read for "c)"
+            token = successor
+        return f"{token}) {rest}", token
+    if not prev.endswith((":", ";")) or not (rest[:1].isupper() or rest[:1].isdigit()):
+        return line, last_point
+    if successor:
+        # điểm are never nested, so inside a list the next letter follows even when OCR
+        # turned the closing ';' into ':' ("h) ...lao động: ¡)" is i, not a)
+        expected = successor
+    elif prev.endswith(":"):
+        expected = "a"
+    else:
+        issues.append(f"unresolved_point_marker:{token}")
+        return line, last_point
+    issues.append(f"fix_point_marker:{token}->{expected}")
+    return f"{expected}) {rest}", expected
+
+
 def clean_ocr_page(raw: str) -> tuple[str, list[str]]:
     """Remove OCR noise and re-flow wrapped lines into paragraphs.
 
@@ -229,7 +311,8 @@ def clean_ocr_page(raw: str) -> tuple[str, list[str]]:
     """
     issues: list[str] = []
     kept: list[str] = []
-    for line in normalize_text(raw).split("\n"):
+    last_point: str | None = None
+    for line in _split_midline_points(normalize_text(raw).split("\n"), issues):
         if not line:
             kept.append("")
             continue
@@ -256,6 +339,7 @@ def clean_ocr_page(raw: str) -> tuple[str, list[str]]:
         if len(_letters(fixed)) < 2 and not RE_KHOAN.match(fixed + " "):
             issues.append("drop_short_noise")
             continue
+        fixed, last_point = _fix_point_marker(fixed, _last_text(kept), last_point, issues)
         kept.append(fixed)
 
     paragraphs: list[str] = []

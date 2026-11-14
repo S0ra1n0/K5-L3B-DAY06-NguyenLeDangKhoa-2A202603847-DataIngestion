@@ -84,6 +84,9 @@
         "fix_chapter_numeral": 1,
         "fix_chapter_sequence": 2,
         "fix_khoan_number": 27,
+        "fix_point_marker:¡->i": 1,
+        "fix_point_marker:°->c": 1,
+        "fix_point_spacing": 1,
         "strip_noise": 40
       },
       "pages": [
@@ -225,7 +228,9 @@
             23,
             24
           ],
-          "cleaning_issues": []
+          "cleaning_issues": [
+            "fix_point_marker:¡->i"
+          ]
         },
         {
           "page": 9,
@@ -813,6 +818,7 @@
             "drop_page_number",
             "fix_article_heading_spelling",
             "fix_khoan_number",
+            "fix_point_marker:°->c",
             "strip_noise"
           ]
         },
@@ -1128,7 +1134,7 @@
         },
         {
           "page": 56,
-          "char_count": 2086,
+          "char_count": 2087,
           "is_content_page": true,
           "text_layer_chars": 18,
           "ocr_mean_conf": 95.1,
@@ -1142,6 +1148,7 @@
           ],
           "cleaning_issues": [
             "drop_page_number",
+            "fix_point_spacing",
             "strip_noise"
           ]
         },
@@ -1460,8 +1467,23 @@
         "fix_chapter_numeral": 4,
         "fix_chapter_sequence": 3,
         "fix_khoan_number": 23,
+        "fix_point_close_y": 1,
+        "fix_point_letter:e->c": 10,
+        "fix_point_letter:đ->d": 3,
+        "fix_point_marker:.d->d": 1,
+        "fix_point_marker:3->a": 1,
+        "fix_point_marker:8->a": 3,
+        "fix_point_marker:9->a": 1,
+        "fix_point_marker:a3->a": 1,
+        "fix_point_marker:ce->c": 1,
+        "fix_point_marker:©->c": 2,
+        "fix_point_marker:ï->i": 1,
+        "fix_point_marker:ơ->c": 1,
+        "fix_point_marker:ở->đ": 1,
+        "fix_point_spacing": 2,
         "quoted_article_heading": 3,
-        "strip_noise": 72
+        "strip_noise": 72,
+        "unresolved_point_marker:€": 1
       },
       "pages": [
         {
@@ -1513,6 +1535,7 @@
           ],
           "cleaning_issues": [
             "drop_short_noise",
+            "fix_point_letter:e->c",
             "strip_noise"
           ]
         },
@@ -1531,6 +1554,7 @@
           "cleaning_issues": [
             "drop_page_number",
             "drop_symbol_line",
+            "fix_point_letter:e->c",
             "strip_noise"
           ]
         },
@@ -1609,6 +1633,9 @@
           ],
           "cleaning_issues": [
             "drop_page_number",
+            "fix_point_letter:e->c",
+            "fix_point_letter:đ->d",
+            "fix_point_marker:8->a",
             "strip_noise"
           ]
         },
@@ -1625,6 +1652,8 @@
             22
           ],
           "cleaning_issues": [
+            "fix_point_marker:9->a",
+            "fix_point_marker:ï->i",
             "strip_noise"
           ]
         },
@@ -1680,6 +1709,7 @@
           ],
           "cleaning_issues": [
             "drop_page_number",
+            "fix_point_letter:e->c",
             "strip_noise"
           ]
         },
@@ -1713,6 +1743,7 @@
           ],
           "cleaning_issues": [
             "drop_page_number",
+            "fix_point_marker:ơ->c",
             "strip_noise"
           ]
         },
@@ -1728,7 +1759,8 @@
             36
           ],
           "cleaning_issues": [
-            "drop_page_number"
+            "drop_page_number",
+            "fix_point_letter:e->c"
           ]
         },
         {
@@ -1822,6 +1854,7 @@
           ],
           "cleaning_issues": [
             "drop_page_number",
+            "fix_point_marker:3->a",
             "strip_noise"
           ]
         },
@@ -1845,7 +1878,7 @@
         },
         {
           "page": 22,
-          "char_count": 2301,
+          "char_count": 2300,
           "is_content_page": true,
           "text_layer_chars": 0,
           "ocr_mean_conf": 95.23,
@@ -1858,6 +1891,8 @@
           ],
           "cleaning_issues": [
             "drop_page_number",
+            "fix_point_marker:.d->d",
+            "fix_point_marker:8->a",
             "strip_noise"
           ]
         },
@@ -1932,6 +1967,9 @@
           "cleaning_issues": [
             "drop_page_number",
             "fix_khoan_number",
+            "fix_point_close_y",
+            "fix_point_letter:e->c",
+            "fix_point_marker:©->c",
             "strip_noise"
           ]
         },
@@ -2077,6 +2115,7 @@
           "cleaning_issues": [
             "drop_page_number",
             "drop_symbol_line",
+            "fix_point_letter:e->c",
             "strip_noise"
           ]
         },
@@ -2138,7 +2177,8 @@
           ],
           "cleaning_issues": [
             "drop_page_number",
-            "drop_short_noise"
+            "drop_short_noise",
+            "fix_point_marker:©->c"
           ]
         },
         {
@@ -2186,7 +2226,7 @@
         },
         {
           "page": 40,
-          "char_count": 2230,
+          "char_count": 2229,
           "is_content_page": true,
           "text_layer_chars": 0,
           "ocr_mean_conf": 94.93,
@@ -2199,6 +2239,7 @@
           ],
           "cleaning_issues": [
             "drop_page_number",
+            "fix_point_marker:ce->c",
             "strip_noise"
           ]
         },
@@ -2223,7 +2264,7 @@
         },
         {
           "page": 42,
-          "char_count": 2415,
+          "char_count": 2416,
           "is_content_page": true,
           "text_layer_chars": 0,
           "ocr_mean_conf": 94.65,
@@ -2235,6 +2276,7 @@
           ],
           "cleaning_issues": [
             "drop_page_number",
+            "fix_point_spacing",
             "strip_noise"
           ]
         },
@@ -2272,7 +2314,8 @@
             119
           ],
           "cleaning_issues": [
-            "drop_page_number"
+            "drop_page_number",
+            "fix_point_marker:ở->đ"
           ]
         },
         {
@@ -2443,6 +2486,7 @@
           ],
           "cleaning_issues": [
             "drop_page_number",
+            "fix_point_letter:đ->d",
             "strip_noise"
           ]
         },
@@ -2460,6 +2504,7 @@
           ],
           "cleaning_issues": [
             "drop_page_number",
+            "fix_point_letter:e->c",
             "strip_noise"
           ]
         },
@@ -2656,7 +2701,7 @@
         },
         {
           "page": 65,
-          "char_count": 2083,
+          "char_count": 2084,
           "is_content_page": true,
           "text_layer_chars": 0,
           "ocr_mean_conf": 94.52,
@@ -2669,6 +2714,7 @@
           ],
           "cleaning_issues": [
             "drop_page_number",
+            "fix_point_spacing",
             "strip_noise"
           ]
         },
@@ -2707,6 +2753,7 @@
             "drop_page_number",
             "drop_symbol_line",
             "fix_article_heading_spelling",
+            "fix_point_letter:e->c",
             "strip_noise"
           ]
         },
@@ -2739,6 +2786,7 @@
           ],
           "cleaning_issues": [
             "drop_page_number",
+            "fix_point_letter:đ->d",
             "strip_noise"
           ]
         },
@@ -2866,6 +2914,8 @@
           "cleaning_issues": [
             "drop_page_number",
             "drop_symbol_line",
+            "fix_point_letter:e->c",
+            "fix_point_marker:a3->a",
             "strip_noise"
           ]
         },
@@ -2945,6 +2995,7 @@
           "cleaning_issues": [
             "drop_page_number",
             "fix_chapter_numeral",
+            "fix_point_marker:8->a",
             "quoted_article_heading",
             "strip_noise"
           ]
@@ -2962,7 +3013,8 @@
             "drop_page_number",
             "fix_khoan_number",
             "quoted_article_heading",
-            "strip_noise"
+            "strip_noise",
+            "unresolved_point_marker:€"
           ]
         },
         {
