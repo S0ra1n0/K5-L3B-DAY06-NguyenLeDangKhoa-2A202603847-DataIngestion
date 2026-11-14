@@ -20,7 +20,8 @@ AUDIT = STARTER / "results/audit"
 
 def read(name: str) -> list[dict]:
     with open(AUDIT / name, encoding="utf-8") as handle:
-        return list(csv.DictReader(handle))
+        # spreadsheet-style editors may append an empty row; it is not a label
+        return [r for r in csv.DictReader(handle) if (r.get("strategy") or "").strip()]
 
 
 def final(row: dict, field: str, allowed: set[int]) -> tuple[int, bool]:

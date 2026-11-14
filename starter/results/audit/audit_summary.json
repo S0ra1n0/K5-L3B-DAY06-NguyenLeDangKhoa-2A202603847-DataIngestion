@@ -1,5 +1,5 @@
 {
-  "all_rows_reviewed_by_student": false,
+  "all_rows_reviewed_by_student": true,
   "strategies": {
     "A": {
       "coherence_mean": 1.1,

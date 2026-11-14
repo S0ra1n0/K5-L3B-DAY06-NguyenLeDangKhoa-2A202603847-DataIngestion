@@ -10,7 +10,7 @@
 
 ## Ai chấm và cách chấm
 
-- **Nhãn coherence và grounding** là bản nháp do trợ lý AI (Claude) chấm. Claude đọc từng chunk trong trace theo thang điểm của GUIDE.md và ghi lý do cụ thể cho từng nhãn. **Học viên phải duyệt từng dòng** ở cột `student_review`:
+- **Nhãn coherence và grounding** là bản nháp do trợ lý AI (Claude) chấm. Claude đọc từng chunk trong trace theo thang điểm của GUIDE.md và ghi lý do cụ thể cho từng nhãn. Học viên đã duyệt từng dòng ở cột `student_review` (cả 90 dòng đều `ok`). Quy ước của cột này:
   - để trống hoặc ghi `ok` nghĩa là đồng ý;
   - ghi một số nghĩa là thay nhãn.
 
@@ -32,7 +32,7 @@
 - **Grounding** (độ đủ của evidence trong top-3, **không phải** độ chính xác câu trả lời của LLM): 0 = không có bằng chứng; 1 = có nhưng thiếu điều kiện/ngữ cảnh hoặc truy nguồn sai; 2 = đủ để trả lời và truy được nguồn.
 - **Metadata đủ và đúng:** `source`, `pages`, `year`, `chapter`, `article` đều khớp nguồn. Nếu `article` chỉ ghi một điều trong khi chunk chứa nội dung của hai điều thì tính là **không đủ**.
 
-## Kết quả (bản nháp, chờ học viên duyệt)
+## Kết quả (học viên đã duyệt 90/90 nhãn, không sửa nhãn nào)
 
 | Strategy | Coherence TB /2 (n) | Metadata đủ và đúng (n/N) | Filter tuân thủ (test) | Grounding 0/1/2 và TB /2 |
 |---|---|---|---|---|

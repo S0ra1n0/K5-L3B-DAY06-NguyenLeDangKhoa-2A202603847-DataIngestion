@@ -1,5 +1,68 @@
 # Day 06 · Data Ingestion Engineering
 
+## Bài làm: Bộ luật Lao động 2012 và 2019
+
+**Học viên:** xem [STUDENT.md](STUDENT.md).
+**Báo cáo:** [report/individual/2A202603847_NguyenLeDangKhoa.md](report/individual/2A202603847_NguyenLeDangKhoa.md).
+
+**Kết quả:** chọn cấu hình **C** (chunk theo Điều + filter `year`).
+- Dev: Hit@1 11/15, Evidence Hit@3 15/15.
+- Test: Hit@1 5/5, Evidence Hit@3 5/5.
+
+| Thành phần | Đường dẫn |
+|---|---|
+| Corpus gốc (2 PDF scan chính thức) và manifest | `starter/data/raw/`, `starter/data/manifest.json` |
+| Trang đã OCR và làm sạch, log lỗi | `starter/data/processed/pages.jsonl`, `starter/results/ingestion_log.json` |
+| Benchmark 20 câu (15 dev / 5 test) | `benchmark/questions.json`, `benchmark/README.md` |
+| Cấu hình A/B/C, experiment log | `starter/configs/strategies.json`, `artifacts/experiment_log.csv` |
+| Code | `starter/src/` (ingestion, chunking, embeddings, store, evaluation, run), `starter/scripts/` |
+| Trace top-3, metrics, lựa chọn | `starter/results/traces/`, `metrics_{dev,test}.json`, `selection.json` |
+| Audit thủ công | `starter/results/audit/` |
+
+### Cách chạy lại (từ thư mục `starter/`, Windows, Python 3.12)
+
+**Yêu cầu:**
+- Docker.
+- Tesseract 5.4: `winget install --id UB-Mannheim.TesseractOCR -e`.
+- Model tiếng Việt cho Tesseract tải vào `starter/tessdata/`:
+
+```bash
+curl -L -o tessdata/vie.traineddata https://github.com/tesseract-ocr/tessdata_best/raw/main/vie.traineddata
+```
+
+**Cài đặt môi trường và khởi động database:**
+
+```bash
+py -3.12 -m venv .venv
+.venv/Scripts/python -m pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cpu
+.venv/Scripts/python -m pip install -r requirements.txt
+cp .env.example .env
+docker compose -p day6_student_starter up -d --wait
+```
+
+**Chạy pipeline theo thứ tự:**
+
+```bash
+.venv/Scripts/python -X utf8 scripts/build_corpus.py       # OCR + làm sạch + manifest (OCR ~8 phút lần đầu, sau đó dùng cache)
+.venv/Scripts/python -X utf8 scripts/verify_benchmark.py   # kiểm chứng 34 đoạn evidence
+.venv/Scripts/python -X utf8 scripts/build_chunks.py       # chunk A và B
+.venv/Scripts/python -X utf8 scripts/embed_chunks.py       # multilingual-e5-base, CPU (~2 phút + tải model ~1,1 GB lần đầu)
+.venv/Scripts/python -X utf8 scripts/ingest_store.py       # nạp vào pgvector + tự kiểm tra
+.venv/Scripts/python -X utf8 -m src.run dev                # A/B/C trên dev
+.venv/Scripts/python -X utf8 -m src.run select             # chọn theo tiêu chí đã chốt
+.venv/Scripts/python -X utf8 -m src.run test               # test (chỉ chạy được một lần)
+.venv/Scripts/python -X utf8 scripts/audit_metadata.py     # kiểm tra metadata top-3 test
+.venv/Scripts/python -X utf8 scripts/summarize_audit.py    # tổng hợp nhãn thủ công
+```
+
+**Lưu ý khi chạy lại:**
+- Lệnh `test` từ chối chạy nếu đã có `results/metrics_test.json`. Muốn chạy lại để kiểm tra tái lập, hãy xóa file đó (và ghi rõ đây không còn là holdout độc lập).
+- Embedding chạy local, không cần API key; chi phí 0 USD.
+
+---
+
+## Đề bài
+
 **Lab cá nhân** · **4 giờ** · **Dữ liệu tự chọn**
 
 Biến tài liệu thành kho tri thức có thể truy xuất cho AI agent, rồi đo xem cách chuẩn bị dữ liệu nào hiệu quả nhất.
