@@ -1,4 +1,4 @@
 strategy,chunking,chunk_size,overlap,metadata,filter,vectorizer,hypothesis,dev_hit1,dev_hit3,test_hit1,test_hit3,notes
-A,,,,,,,,,,,,
-B,,,,,,,,,,,,
-C,,,,,,,,,,,,
+A,fixed character windows inside each page (834 chunks),500,50,"document_id, source, page, pages, year, law_number, chapter, article",none,TBD (step 5),"Baseline: windows cut mid-sentence and mix neighbouring articles, so Hit@1 should be lower than B; small windows may still score well on short single-sentence evidence.",,,,,"configs/strategies.json; data/chunks/A.jsonl"
+B,"one chunk per Điều, split at khoản/điểm/sentence when > max (552 chunks, 69 articles split, heading repeated)",1200 (max),0,"document_id, source, page, pages, year, law_number, chapter, article, part/parts",none,TBD (step 5),"Whole articles keep conditions/exceptions with their rule, so coherence and grounding should beat A; without a filter, same-topic articles of 2012 and 2019 will compete on year-specific questions.",,,,,"configs/strategies.json; data/chunks/B.jsonl"
+C,same chunks as B,1200 (max),0,same as B,"year = value stated in the question (8/20 questions); others unfiltered",TBD (step 5),"Only difference vs B is the year filter, so any change is on the 8 filter questions: they should stop retrieving the other year's article.",,,,,"reuses data/chunks/B.jsonl"

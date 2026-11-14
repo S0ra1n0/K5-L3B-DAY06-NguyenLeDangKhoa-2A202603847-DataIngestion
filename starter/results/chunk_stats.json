@@ -1,0 +1,131 @@
+{
+  "strategies": {
+    "A": {
+      "params": {
+        "method": "fixed",
+        "size": 500,
+        "overlap": 50
+      },
+      "chunks": 834,
+      "chunks_per_document": {
+        "blld-2012": 385,
+        "blld-2019": 449
+      },
+      "chars_total": 384125,
+      "chars_min": 52,
+      "chars_median": 500.0,
+      "chars_p90": 500,
+      "chars_max": 500,
+      "multi_page_chunks": 0,
+      "split_articles": 0,
+      "chunks_without_article": 2,
+      "build_seconds": 0.007,
+      "evidence_reachable": "20/20",
+      "evidence_unreachable_ids": []
+    },
+    "B": {
+      "params": {
+        "method": "article",
+        "max_size": 1200
+      },
+      "chunks": 552,
+      "chunks_per_document": {
+        "blld-2012": 270,
+        "blld-2019": 282
+      },
+      "chars_total": 355277,
+      "chars_min": 91,
+      "chars_median": 606.0,
+      "chars_p90": 1090,
+      "chars_max": 1199,
+      "multi_page_chunks": 100,
+      "split_articles": 69,
+      "chunks_without_article": 2,
+      "build_seconds": 0.012,
+      "evidence_reachable": "20/20",
+      "evidence_unreachable_ids": []
+    }
+  },
+  "evidence_reachability": {
+    "q01": {
+      "A": true,
+      "B": true
+    },
+    "q02": {
+      "A": true,
+      "B": true
+    },
+    "q03": {
+      "A": true,
+      "B": true
+    },
+    "q04": {
+      "A": true,
+      "B": true
+    },
+    "q05": {
+      "A": true,
+      "B": true
+    },
+    "q06": {
+      "A": true,
+      "B": true
+    },
+    "q07": {
+      "A": true,
+      "B": true
+    },
+    "q08": {
+      "A": true,
+      "B": true
+    },
+    "q09": {
+      "A": true,
+      "B": true
+    },
+    "q10": {
+      "A": true,
+      "B": true
+    },
+    "q11": {
+      "A": true,
+      "B": true
+    },
+    "q12": {
+      "A": true,
+      "B": true
+    },
+    "q13": {
+      "A": true,
+      "B": true
+    },
+    "q14": {
+      "A": true,
+      "B": true
+    },
+    "q15": {
+      "A": true,
+      "B": true
+    },
+    "q16": {
+      "A": true,
+      "B": true
+    },
+    "q17": {
+      "A": true,
+      "B": true
+    },
+    "q18": {
+      "A": true,
+      "B": true
+    },
+    "q19": {
+      "A": true,
+      "B": true
+    },
+    "q20": {
+      "A": true,
+      "B": true
+    }
+  }
+}

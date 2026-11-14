@@ -1,0 +1,20 @@
+{
+  "A": {
+    "description": "Fixed-size character windows inside each page; no metadata filter.",
+    "chunking": {"method": "fixed", "size": 500, "overlap": 50},
+    "chunks_from": "A",
+    "use_filter": false
+  },
+  "B": {
+    "description": "One chunk per Điều (may span pages); articles > max_size split at khoản/điểm/sentence, heading repeated; no filter.",
+    "chunking": {"method": "article", "max_size": 1200},
+    "chunks_from": "B",
+    "use_filter": false
+  },
+  "C": {
+    "description": "Same chunks as B; apply the question's metadata filter (year) when the question provides one.",
+    "chunking": {"method": "article", "max_size": 1200},
+    "chunks_from": "B",
+    "use_filter": true
+  }
+}
