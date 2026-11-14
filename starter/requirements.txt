@@ -2,3 +2,7 @@
 psycopg[binary]==3.3.8
 pypdf>=5,<7
 python-dotenv>=1,<2
+# OCR for the scanned Labor Code PDFs (also needs the Tesseract 5.4 binary + vie tessdata_best, see README)
+pytesseract==0.3.13
+pillow>=11,<13
+pypdfium2>=4.30,<6

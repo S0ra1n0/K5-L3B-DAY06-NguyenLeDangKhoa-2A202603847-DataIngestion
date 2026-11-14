@@ -50,6 +50,17 @@ Dừng container nhưng giữ dữ liệu:
 docker compose -p day6_student_starter stop
 ```
 
+## 1b. Corpus của bài này: Bộ luật Lao động 2012 và 2019 (OCR)
+
+Hai PDF gốc nằm trong `data/raw/` (nguồn, quyền và checksum xem `data/manifest.json`). Cả hai là **bản scan không có lớp text**, nên cần OCR:
+
+1. Cài Tesseract 5.4 (Windows): `winget install --id UB-Mannheim.TesseractOCR -e`. Nếu cài ở chỗ khác, đặt biến `TESSERACT_CMD` trỏ tới `tesseract.exe`.
+2. Tải model tiếng Việt `tessdata_best` vào `starter/tessdata/` (thư mục này không được commit):
+   `curl -L -o tessdata/vie.traineddata https://github.com/tesseract-ocr/tessdata_best/raw/main/vie.traineddata`
+3. Chạy `python -X utf8 scripts/build_corpus.py` từ `starter/`.
+
+Kết quả gồm cache OCR thô `data/ocr/*.ocr.json` (dùng lại nếu PDF và cấu hình OCR không đổi), các trang đã làm sạch `data/processed/pages.jsonl`, `data/manifest.json` và `results/ingestion_log.json` (trang rỗng hoặc độ tin cậy thấp, các chỗ đã sửa, kiểm tra thứ tự Chương/Điều).
+
 ## 2. Chọn embedding model
 
 Điền key tương ứng trong `.env` nếu dùng OpenRouter, OpenAI hoặc Gemini; **không commit `.env`**. Model local không cần API key. `requirements.txt` chỉ có dependencies cơ bản: tự cài SDK hoặc thư viện local phù hợp với model bạn chọn và ghi lại version/lệnh cài trong báo cáo. Ghi tên model và số chiều; dùng cùng model cho toàn bộ chiến lược và vector query tương thích vector document.

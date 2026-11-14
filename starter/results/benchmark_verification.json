@@ -1,0 +1,559 @@
+{
+  "summary": {
+    "total": 20,
+    "dev": 15,
+    "test": 5,
+    "filter_questions": 8,
+    "filter_questions_test": 3,
+    "types": {
+      "dien_dat_lai": 3,
+      "dieu_kien_ngoai_le": 7,
+      "metadata_filter": 7,
+      "truc_tiep": 3
+    },
+    "quotes_checked": 34
+  },
+  "errors": [],
+  "questions": [
+    {
+      "id": "q01",
+      "split": "dev",
+      "type": "metadata_filter",
+      "filter": {
+        "year": 2019
+      },
+      "golds": [
+        {
+          "gold": "blld-2019#p6",
+          "article": 14,
+          "quotes": [
+            {
+              "quote": "Hai bên có thể giao kết hợp đồng lao động bằng lời nói đối với hợp đồng có thời hạn dưới 01 tháng",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q02",
+      "split": "dev",
+      "type": "metadata_filter",
+      "filter": {
+        "year": 2012
+      },
+      "golds": [
+        {
+          "gold": "blld-2012#p6",
+          "article": 16,
+          "quotes": [
+            {
+              "quote": "Đối với công việc tạm thời có thời hạn dưới 03 tháng, các bên có thể giao kết hợp đồng lao động bằng lời nói.",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q03",
+      "split": "dev",
+      "type": "metadata_filter",
+      "filter": {
+        "year": 2019
+      },
+      "golds": [
+        {
+          "gold": "blld-2019#p40",
+          "article": 107,
+          "quotes": [
+            {
+              "quote": "số giờ làm thêm không quá 12 giờ trong 01 ngày; không quá 40 giờ trong 01 tháng",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q04",
+      "split": "dev",
+      "type": "metadata_filter",
+      "filter": {
+        "year": 2012
+      },
+      "golds": [
+        {
+          "gold": "blld-2012#p31",
+          "article": 106,
+          "quotes": [
+            {
+              "quote": "không quá 12 giờ trong 01 ngày, không quá 30 giờ trong 0] tháng",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q05",
+      "split": "dev",
+      "type": "dien_dat_lai",
+      "filter": null,
+      "golds": [
+        {
+          "gold": "blld-2019#p10",
+          "article": 25,
+          "quotes": [
+            {
+              "quote": "Không quá 180 ngày đối với công việc của người quản lý doanh nghiệp",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q06",
+      "split": "dev",
+      "type": "truc_tiep",
+      "filter": null,
+      "golds": [
+        {
+          "gold": "blld-2019#p10",
+          "article": 26,
+          "quotes": [
+            {
+              "quote": "ít nhất phải băng 85% mức lương của công việc đó",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        },
+        {
+          "gold": "blld-2012#p9",
+          "article": 28,
+          "quotes": [
+            {
+              "quote": "ít nhất phải bằng 85% mức lương của công việc đó",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q07",
+      "split": "dev",
+      "type": "dien_dat_lai",
+      "filter": null,
+      "golds": [
+        {
+          "gold": "blld-2019#p14",
+          "article": 35,
+          "quotes": [
+            {
+              "quote": "Ít nhất 45 ngày nếu làm việc theo hợp đồng lao động không xác định thời hạn",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        },
+        {
+          "gold": "blld-2012#p12",
+          "article": 37,
+          "quotes": [
+            {
+              "quote": "Người lao động làm việc theo hợp đồng lao động không xác định thời hạn có quyền đơn phương chấm dứt hợp đồng lao động, nhưng phải báo cho người sử dụng lao động biết trước ít nhất 45 ngày",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q08",
+      "split": "dev",
+      "type": "dieu_kien_ngoai_le",
+      "filter": {
+        "year": 2019
+      },
+      "golds": [
+        {
+          "gold": "blld-2019#p14",
+          "article": 35,
+          "quotes": [
+            {
+              "quote": "Người lao động có quyền đơn phương chấm đứt hợp đồng lao động không cân báo trước trong trường hợp sau đây",
+              "on_gold_page": true,
+              "also_on": []
+            },
+            {
+              "quote": "Không được trả đủ lương hoặc trả lương không đúng thời hạn, trừ trường hợp quy định tại khoản 4 Điều 97",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q09",
+      "split": "dev",
+      "type": "truc_tiep",
+      "filter": null,
+      "golds": [
+        {
+          "gold": "blld-2019#p19",
+          "article": 46,
+          "quotes": [
+            {
+              "quote": "mỗi năm làm việc được trợ cấp một nửa tháng tiền lương",
+              "on_gold_page": true,
+              "also_on": [
+                "blld-2012#p15"
+              ]
+            }
+          ]
+        },
+        {
+          "gold": "blld-2012#p15",
+          "article": 48,
+          "quotes": [
+            {
+              "quote": "mỗi năm làm việc được trợ cấp một nửa tháng tiền lương",
+              "on_gold_page": true,
+              "also_on": [
+                "blld-2019#p19"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "split": "dev",
+      "type": "dieu_kien_ngoai_le",
+      "filter": null,
+      "golds": [
+        {
+          "gold": "blld-2019#p19",
+          "article": 47,
+          "quotes": [
+            {
+              "quote": "cứ mỗi năm làm việc trả 01 tháng tiền lương nhưng ít nhất bằng 02 tháng tiền lương",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        },
+        {
+          "gold": "blld-2012#p16",
+          "article": 49,
+          "quotes": [
+            {
+              "quote": "nhung ít nhất phải bằng 02 tháng tiền lương",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q11",
+      "split": "dev",
+      "type": "dieu_kien_ngoai_le",
+      "filter": null,
+      "golds": [
+        {
+          "gold": "blld-2019#p20",
+          "article": 48,
+          "quotes": [
+            {
+              "quote": "có thể kéo đài nhưng không được quá 30 ngày",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        },
+        {
+          "gold": "blld-2012#p15",
+          "article": 47,
+          "quotes": [
+            {
+              "quote": "trường hợp đặc biệt, có thể kéo dài nhưng không được quá 30 ngày",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q12",
+      "split": "dev",
+      "type": "truc_tiep",
+      "filter": null,
+      "golds": [
+        {
+          "gold": "blld-2019#p40",
+          "article": 106,
+          "quotes": [
+            {
+              "quote": "Giờ làm việc ban đêm được tính từ 22 giờ đến 06 giờ sáng ngày hôm sau.",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        },
+        {
+          "gold": "blld-2012#p30",
+          "article": 105,
+          "quotes": [
+            {
+              "quote": "Giờ làm việc ban đêm được tính từ 22 giờ đến 6 giờ sáng ngày hôm sau.",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q13",
+      "split": "dev",
+      "type": "dien_dat_lai",
+      "filter": null,
+      "golds": [
+        {
+          "gold": "blld-2019#p41",
+          "article": 109,
+          "quotes": [
+            {
+              "quote": "làm việc ban đêm thì được nghỉ giữa giờ ít nhất 45 phút liên tục",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        },
+        {
+          "gold": "blld-2012#p31",
+          "article": 108,
+          "quotes": [
+            {
+              "quote": "Trường hợp làm việc ban đêm, thì người lao động được nghỉ giữa giờ ít nhât 45 phút",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q14",
+      "split": "dev",
+      "type": "dieu_kien_ngoai_le",
+      "filter": null,
+      "golds": [
+        {
+          "gold": "blld-2019#p37",
+          "article": 98,
+          "quotes": [
+            {
+              "quote": "ít nhất bằng 300% chưa kể tiền lương ngày lễ, tết",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        },
+        {
+          "gold": "blld-2012#p29",
+          "article": 97,
+          "quotes": [
+            {
+              "quote": "ít nhất băng 300% chua kể tiền lương ngày lễ",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q15",
+      "split": "dev",
+      "type": "dieu_kien_ngoai_le",
+      "filter": null,
+      "golds": [
+        {
+          "gold": "blld-2019#p42",
+          "article": 113,
+          "quotes": [
+            {
+              "quote": "14 ngày làm việc đối với người lao động chưa thành niên, lao động là người khuyêt tật, người làm nghề, công việc nặng nhọc, độc hại, nguy hiểm",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        },
+        {
+          "gold": "blld-2012#p32",
+          "article": 111,
+          "quotes": [
+            {
+              "quote": "14 ngày làm việc đối với người làm công việc nặng nhọc, độc hại, nguy hiểm",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q16",
+      "split": "test",
+      "type": "metadata_filter",
+      "filter": {
+        "year": 2012
+      },
+      "golds": [
+        {
+          "gold": "blld-2012#p52",
+          "article": 187,
+          "quotes": [
+            {
+              "quote": "được hưởng lương hưu khi nam đủ 60 tuổi, nữ đủ 55 tuổi",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q17",
+      "split": "test",
+      "type": "metadata_filter",
+      "filter": {
+        "year": 2019
+      },
+      "golds": [
+        {
+          "gold": "blld-2019#p60",
+          "article": 169,
+          "quotes": [
+            {
+              "quote": "Kể từ năm 2021, tuổi nghỉ hưu của người lao động trong điều kiện lao động bình thường là đủ 60 tuổi 03 tháng đối với lao động nam và đủ 55 tuổi 04 tháng đối với lao động nữ",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q18",
+      "split": "test",
+      "type": "metadata_filter",
+      "filter": {
+        "year": 2019
+      },
+      "golds": [
+        {
+          "gold": "blld-2019#p42",
+          "article": 112,
+          "quotes": [
+            {
+              "quote": "Quốc khánh: 02 ngày (ngày 02 tháng 9 dương lịch và 01 ngày liền kề trước hoặc sau)",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q19",
+      "split": "test",
+      "type": "dieu_kien_ngoai_le",
+      "filter": null,
+      "golds": [
+        {
+          "gold": "blld-2019#p46",
+          "article": 123,
+          "quotes": [
+            {
+              "quote": "liên quan trực tiếp đến tài chính, tài sản, tiệt lộ bí mật công nghệ, bí mật kinh doanh của người sử dụng lao động thì thời hiệu xử lý kỷ luật lao động là 12 tháng",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        },
+        {
+          "gold": "blld-2012#p35",
+          "article": 124,
+          "quotes": [
+            {
+              "quote": "liên quan trực tiếp đến tài chính, tài sản, tiết lộ bí mật công nghệ, bí mật kinh doanh của người sử dụng lao động thì thời hiệu xử lý kỷ luật lao động tối đa là 12 tháng",
+              "on_gold_page": true,
+              "also_on": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q20",
+      "split": "test",
+      "type": "dieu_kien_ngoai_le",
+      "filter": null,
+      "golds": [
+        {
+          "gold": "blld-2019#p50",
+          "article": 137,
+          "quotes": [
+            {
+              "quote": "không được sử dụng người lao động làm việc ban đêm",
+              "on_gold_page": true,
+              "also_on": []
+            },
+            {
+              "quote": "Mang thai từ tháng thứ 07 hoặc từ tháng thứ 06 nếu làm việc ở vùng cao, vùng sâu, vùng xa, biên giới, hải đảo",
+              "on_gold_page": true,
+              "also_on": [
+                "blld-2012#p44"
+              ]
+            }
+          ]
+        },
+        {
+          "gold": "blld-2012#p44",
+          "article": 155,
+          "quotes": [
+            {
+              "quote": "không được sử dụng lao động nữ làm việc ban đêm",
+              "on_gold_page": true,
+              "also_on": []
+            },
+            {
+              "quote": "Mang thai từ tháng thứ 07 hoặc từ tháng thứ 06 nếu làm việc ở vùng cao, vùng sâu, vùng xa, biên giới, hải đảo",
+              "on_gold_page": true,
+              "also_on": [
+                "blld-2019#p50"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
